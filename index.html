@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime Cards Gallery</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#0f172a;
+color:white;
+}
+
+header{
+padding:25px;
+text-align:center;
+background:#111827;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+header h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+header p{
+opacity:.8;
+margin-bottom:15px;
+}
+
+#search{
+width:90%;
+max-width:400px;
+padding:12px;
+border:none;
+border-radius:30px;
+font-size:16px;
+outline:none;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+padding:25px;
+max-width:1300px;
+margin:auto;
+}
+
+.card{
+background:#1f2937;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
+display:block;
+}
+
+.info{
+padding:12px;
+text-align:center;
+}
+
+.info h3{
+font-size:18px;
+margin-bottom:5px;
+}
+
+.info p{
+font-size:14px;
+opacity:.7;
+}
+
+footer{
+text-align:center;
+padding:20px;
+opacity:.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎴 Anime Cards Gallery</h1>
+<p>Image host for WhatsApp Anime Card Bot</p>
+<input type="text" id="search" placeholder="Search characters...">
+</header>
+
+<div class="grid" id="grid">
+
+<div class="card"><img src="cards/gojo.jpg"><div class="info"><h3>Gojo</h3><p>Jujutsu Kaisen</p></div></div>
+
+<div class="card"><img src="cards/zerotwo.jpg"><div class="info"><h3>Zero Two</h3><p>Darling in the Franxx</p></div></div>
+
+<div class="card"><img src="cards/naruto.jpg"><div class="info"><h3>Naruto</h3><p>Naruto</p></div></div>
+
+<div class="card"><img src="cards/sasuke.jpg"><div class="info"><h3>Sasuke</h3><p>Naruto</p></div></div>
+
+<div class="card"><img src="cards/itachi.jpg"><div class="info"><h3>Itachi</h3><p>Naruto</p></div></div>
+
+<div class="card"><img src="cards/luffy.jpg"><div class="info"><h3>Luffy</h3><p>One Piece</p></div></div>
+
+<div class="card"><img src="cards/zoro.jpg"><div class="info"><h3>Zoro</h3><p>One Piece</p></div></div>
+
+<div class="card"><img src="cards/levi.jpg"><div class="info"><h3>Levi</h3><p>Attack on Titan</p></div></div>
+
+<div class="card"><img src="cards/mikasa.jpg"><div class="info"><h3>Mikasa</h3><p>Attack on Titan</p></div></div>
+
+<div class="card"><img src="cards/rem.jpg"><div class="info"><h3>Rem</h3><p>Re:Zero</p></div></div>
+
+<div class="card"><img src="cards/sukuna.jpg"><div class="info"><h3>Sukuna</h3><p>Jujutsu Kaisen</p></div></div>
+
+<div class="card"><img src="cards/nezuko.jpg"><div class="info"><h3>Nezuko</h3><p>Demon Slayer</p></div></div>
+
+<div class="card"><img src="cards/tanjiro.jpg"><div class="info"><h3>Tanjiro</h3><p>Demon Slayer</p></div></div>
+
+<div class="card"><img src="cards/asta.jpg"><div class="info"><h3>Asta</h3><p>Black Clover</p></div></div>
+
+<div class="card"><img src="cards/saitama.jpg"><div class="info"><h3>Saitama</h3><p>One Punch Man</p></div></div>
+
+</div>
+
+<footer>
+Upload more images into /cards folder anytime.
+</footer>
+
+<script>
+const search = document.getElementById("search");
+
+search.addEventListener("input", function(){
+let value = this.value.toLowerCase();
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+if(card.innerText.toLowerCase().includes(value)){
+card.style.display = "block";
+}else{
+card.style.display = "none";
+}
+});
+});
+</script>
+
+</body>
+</html>
